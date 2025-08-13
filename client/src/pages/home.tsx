@@ -60,7 +60,7 @@ export default function Home() {
   };
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-8" data-testid="page-home">
+    <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 md:py-8" data-testid="page-home">
       {/* Profile & Balance Section */}
       <ProfileSection
         user={user}
@@ -77,15 +77,15 @@ export default function Home() {
 
       {/* Game Categories */}
       <div className="mb-6">
-        <h2 className="text-2xl font-playfair font-bold text-casino-gold mb-6" data-testid="heading-featured-games">
+        <h2 className="text-xl sm:text-2xl font-playfair font-bold text-casino-gold mb-4" data-testid="heading-featured-games">
           Featured Games
         </h2>
-        <div className="flex flex-wrap gap-4 mb-6" data-testid="game-categories">
+        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6" data-testid="game-categories">
           {gameCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 shadow-3d hover:shadow-3d-hover ${
+              className={`px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-300 shadow-3d hover:shadow-3d-hover text-sm ${
                 selectedCategory === category.id
                   ? "bg-gradient-to-r from-casino-gold to-casino-orange text-casino-deep-brown"
                   : "bg-gradient-to-r from-casino-dark-brown to-casino-brown text-casino-gold hover:from-casino-brown hover:to-casino-dark-brown"
@@ -99,7 +99,7 @@ export default function Home() {
       </div>
 
       {/* Games Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-testid="games-grid">
+      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 sm:gap-4 md:gap-6" data-testid="games-grid">
         {gamesLoading ? (
           Array.from({ length: 8 }).map((_, index) => (
             <div

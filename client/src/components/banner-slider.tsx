@@ -38,14 +38,14 @@ export default function BannerSlider({ banners }: BannerSliderProps) {
 
   if (banners.length === 0) {
     return (
-      <div className="mb-8" data-testid="banner-slider-empty">
-        <div className="banner-slider rounded-2xl overflow-hidden shadow-3d h-64 md:h-80 flex items-center justify-center">
-          <div className="text-center text-white p-8">
-            <div className="w-16 h-16 bg-casino-gold rounded-full flex items-center justify-center mx-auto mb-4">
-              <span className="text-2xl">🎰</span>
+      <div className="mb-6" data-testid="banner-slider-empty">
+        <div className="banner-slider rounded-xl overflow-hidden shadow-3d h-48 sm:h-56 md:h-64 flex items-center justify-center">
+          <div className="text-center text-white p-4">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 bg-casino-gold rounded-full flex items-center justify-center mx-auto mb-4">
+              <span className="text-xl sm:text-2xl">🎰</span>
             </div>
-            <h2 className="text-2xl font-playfair font-bold mb-2">Welcome to Royal Casino</h2>
-            <p className="text-lg">Experience the ultimate gaming adventure</p>
+            <h2 className="text-lg sm:text-xl md:text-2xl font-playfair font-bold mb-2">Welcome to Royal Casino</h2>
+            <p className="text-sm sm:text-base md:text-lg">Experience the ultimate gaming adventure</p>
           </div>
         </div>
       </div>
@@ -53,9 +53,9 @@ export default function BannerSlider({ banners }: BannerSliderProps) {
   }
 
   return (
-    <div className="mb-8" data-testid="banner-slider">
-      <div className="banner-slider rounded-2xl overflow-hidden shadow-3d relative">
-        <div className="relative h-64 md:h-80">
+    <div className="mb-6" data-testid="banner-slider">
+      <div className="banner-slider rounded-xl overflow-hidden shadow-3d relative">
+        <div className="relative h-48 sm:h-56 md:h-64">
           {banners.map((banner, index) => (
             <div
               key={banner.id}
@@ -67,20 +67,20 @@ export default function BannerSlider({ banners }: BannerSliderProps) {
               }}
               data-testid={`banner-slide-${index}`}
             >
-              <div className="text-center text-white p-8">
-                <div className="text-6xl mb-4" data-testid={`banner-icon-${index}`}>
+              <div className="text-center text-white p-4 sm:p-6">
+                <div className="text-4xl sm:text-5xl md:text-6xl mb-3" data-testid={`banner-icon-${index}`}>
                   {banner.icon === "fas fa-gift" ? "🎁" : 
                    banner.icon === "fas fa-trophy" ? "🏆" : 
                    banner.icon === "fas fa-coins" ? "🪙" : "🎰"}
                 </div>
-                <h2 className="text-3xl md:text-4xl font-playfair font-bold mb-4" data-testid={`banner-title-${index}`}>
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-playfair font-bold mb-3" data-testid={`banner-title-${index}`}>
                   {banner.title}
                 </h2>
-                <p className="text-lg mb-6" data-testid={`banner-description-${index}`}>
+                <p className="text-sm sm:text-base mb-4" data-testid={`banner-description-${index}`}>
                   {banner.description}
                 </p>
                 <button 
-                  className="button-3d px-8 py-3 rounded-lg font-semibold transition-all duration-300"
+                  className="button-3d px-4 sm:px-6 py-2 sm:py-3 rounded-lg font-semibold transition-all duration-300 text-sm sm:text-base"
                   data-testid={`banner-cta-${index}`}
                 >
                   {banner.cta}

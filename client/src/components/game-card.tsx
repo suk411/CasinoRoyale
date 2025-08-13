@@ -53,42 +53,42 @@ export default function GameCard({ game, onPlay }: GameCardProps) {
 
   return (
     <div
-      className="game-card card-3d rounded-2xl overflow-hidden p-4 group cursor-pointer"
+      className="game-card card-3d rounded-xl overflow-hidden p-3 group cursor-pointer"
       onClick={() => onPlay(game.id)}
       data-testid={`game-card-${game.id}`}
     >
       {/* Game Image Placeholder */}
-      <div className="relative h-48 bg-gradient-to-br from-casino-brown to-casino-dark-brown rounded-xl mb-4 flex items-center justify-center">
-        <div className="text-6xl" data-testid={`game-icon-${game.id}`}>
+      <div className="relative h-32 sm:h-40 md:h-48 bg-gradient-to-br from-casino-brown to-casino-dark-brown rounded-lg mb-3 flex items-center justify-center">
+        <div className="text-4xl sm:text-5xl md:text-6xl" data-testid={`game-icon-${game.id}`}>
           {getGameIcon(game.icon)}
         </div>
         
         {/* Play Button Overlay */}
-        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center">
+        <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
           <button 
-            className="button-3d w-16 h-16 rounded-full flex items-center justify-center"
+            className="button-3d w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center"
             data-testid={`button-play-${game.id}`}
           >
-            <Play className="text-xl ml-1" />
+            <Play className="text-lg sm:text-xl ml-1" />
           </button>
         </div>
       </div>
 
       {/* Game Info */}
       <div className="text-white">
-        <h3 className="text-lg font-semibold mb-2" data-testid={`text-game-name-${game.id}`}>
+        <h3 className="text-sm sm:text-base md:text-lg font-semibold mb-2 truncate" data-testid={`text-game-name-${game.id}`}>
           {game.name}
         </h3>
-        <div className="flex items-center justify-between text-sm text-casino-gold mb-2">
-          <span data-testid={`text-min-bet-${game.id}`}>Min: ₹{game.minBet.toLocaleString()}</span>
-          <span data-testid={`text-max-bet-${game.id}`}>Max: ₹{game.maxBet.toLocaleString()}</span>
+        <div className="flex items-center justify-between text-xs sm:text-sm text-casino-gold mb-2">
+          <span data-testid={`text-min-bet-${game.id}`}>₹{game.minBet}</span>
+          <span data-testid={`text-max-bet-${game.id}`}>₹{game.maxBet.toLocaleString()}</span>
         </div>
-        <div className="flex items-center justify-between text-sm">
+        <div className="flex items-center justify-between text-xs sm:text-sm">
           <div className="flex items-center" data-testid={`rating-${game.id}`}>
             {renderStars(game.rating)}
           </div>
-          <span className="text-gray-300" data-testid={`text-players-${game.id}`}>
-            ({game.players.toLocaleString()} playing)
+          <span className="text-gray-300 hidden sm:inline" data-testid={`text-players-${game.id}`}>
+            {game.players.toLocaleString()}
           </span>
         </div>
       </div>

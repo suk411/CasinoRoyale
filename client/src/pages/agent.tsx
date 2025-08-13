@@ -2,7 +2,7 @@ import { Users, TrendingUp, DollarSign, Award } from "lucide-react";
 
 export default function Agent() {
   return (
-    <main className="max-w-7xl mx-auto px-4 py-8" data-testid="page-agent">
+    <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 md:py-8" data-testid="page-agent">
       <div className="text-center py-16">
         <Users className="w-16 h-16 text-casino-gold mb-6 mx-auto" />
         <h2 className="text-3xl font-playfair font-bold text-casino-gold mb-4">

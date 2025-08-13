@@ -11,7 +11,7 @@ export default function Mine() {
   };
 
   return (
-    <main className="max-w-7xl mx-auto px-4 py-8" data-testid="page-mine">
+    <main className="max-w-7xl mx-auto px-3 sm:px-4 py-4 sm:py-6 md:py-8" data-testid="page-mine">
       {/* Profile Header */}
       <div className="balance-card rounded-2xl p-6 text-white mb-8">
         <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">

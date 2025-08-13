@@ -14,14 +14,14 @@ export default function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="nav-3d sticky top-0 z-50 px-4 py-4" data-testid="nav-main">
+    <nav className="nav-3d sticky top-0 z-50 px-3 py-3" data-testid="nav-main">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center space-x-3" data-testid="link-logo">
-          <div className="w-12 h-12 bg-gradient-to-br from-casino-gold to-casino-orange rounded-full flex items-center justify-center gold-glow">
-            <Crown className="text-2xl text-casino-deep-brown" />
+        <Link href="/" className="flex items-center space-x-2" data-testid="link-logo">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-casino-gold to-casino-orange rounded-full flex items-center justify-center gold-glow">
+            <Crown className="text-xl sm:text-2xl text-casino-deep-brown" />
           </div>
-          <h1 className="text-2xl font-playfair font-bold text-casino-gold">Royal Casino</h1>
+          <h1 className="text-lg sm:text-2xl font-playfair font-bold text-casino-gold">Royal Casino</h1>
         </Link>
 
         {/* Desktop Navigation */}
@@ -29,7 +29,7 @@ export default function Navigation() {
           {navigationItems.map((nav) => (
             <Link key={nav.id} href={nav.path}>
               <button
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-3d hover:shadow-3d-hover transform hover:-translate-y-1 ${
+                className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 shadow-3d hover:shadow-3d-hover transform hover:-translate-y-1 text-sm ${
                   location === nav.path || (nav.path === "/" && location === "/")
                     ? "bg-gradient-to-r from-casino-gold to-casino-orange text-casino-deep-brown"
                     : "bg-gradient-to-r from-casino-dark-brown to-casino-brown text-casino-gold hover:from-casino-brown hover:to-casino-dark-brown"
