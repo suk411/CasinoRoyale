@@ -80,12 +80,12 @@ export default function Home() {
         <h2 className="text-xl sm:text-2xl font-playfair font-bold text-casino-gold mb-4" data-testid="heading-featured-games">
           Featured Games
         </h2>
-        <div className="flex flex-wrap gap-2 sm:gap-3 mb-6" data-testid="game-categories">
+        <div className="flex overflow-x-auto gap-2 sm:gap-3 mb-6 pb-2 category-slider" data-testid="game-categories">
           {gameCategories.map((category) => (
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-300 shadow-3d hover:shadow-3d-hover text-sm ${
+              className={`flex-shrink-0 px-3 sm:px-4 py-2 rounded-full font-semibold transition-all duration-300 shadow-3d hover:shadow-3d-hover text-sm whitespace-nowrap ${
                 selectedCategory === category.id
                   ? "bg-gradient-to-r from-casino-gold to-casino-orange text-casino-deep-brown"
                   : "bg-gradient-to-r from-casino-dark-brown to-casino-brown text-casino-gold hover:from-casino-brown hover:to-casino-dark-brown"

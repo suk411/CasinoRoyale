@@ -135,4 +135,14 @@
   .shadow-3d-hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.35), 0 10px 10px rgba(0,0,0,0.27);
   }
+
+  /* Hide scrollbar for category slider */
+  .category-slider::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .category-slider {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }

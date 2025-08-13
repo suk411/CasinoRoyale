@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface Banner {
   id: string;
@@ -28,13 +27,7 @@ export default function BannerSlider({ banners }: BannerSliderProps) {
     return () => clearInterval(interval);
   }, [banners.length]);
 
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % banners.length);
-  };
 
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + banners.length) % banners.length);
-  };
 
   if (banners.length === 0) {
     return (
@@ -89,21 +82,7 @@ export default function BannerSlider({ banners }: BannerSliderProps) {
             </div>
           ))}
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/30 rounded-full flex items-center justify-center text-white hover:bg-black/50 transition-colors"
-            data-testid="button-banner-prev"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-black/30 rounded-full flex items-center justify-center text-white hover:bg-black/50 transition-colors"
-            data-testid="button-banner-next"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+
 
           {/* Navigation Dots */}
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
