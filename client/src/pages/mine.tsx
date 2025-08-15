@@ -26,8 +26,8 @@ export default function Mine() {
     <main className="max-w-md mx-auto px-4 py-6 min-h-screen bg-gradient-to-b from-casino-deep-brown to-casino-dark-brown" data-testid="page-mine">
       {/* Profile Header */}
       <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center space-x-4">
-          <div className="relative">
+        <div className="flex items-center space-x-3 flex-1 min-w-0">
+          <div className="relative flex-shrink-0">
             <div className="w-16 h-16 rounded-full overflow-hidden border-3 border-casino-gold">
               <div className="w-full h-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center">
                 <User className="text-2xl text-white" />
@@ -38,10 +38,10 @@ export default function Mine() {
             </div>
           </div>
           
-          <div>
-            <div className="flex items-center space-x-2">
-              <h2 className="text-white text-lg font-semibold">{user.name}</h2>
-              <div className="bg-gradient-to-r from-amber-600 to-yellow-500 px-2 py-1 rounded text-xs text-black font-bold">
+          <div className="min-w-0 flex-1">
+            <div className="flex items-center space-x-2 mb-1">
+              <h2 className="text-white text-lg font-semibold truncate">{user.name}</h2>
+              <div className="bg-gradient-to-r from-amber-600 to-yellow-500 px-2 py-1 rounded text-xs text-black font-bold flex-shrink-0">
                 VIP{user.vipLevel}
               </div>
             </div>
@@ -50,23 +50,13 @@ export default function Mine() {
         </div>
 
         {/* Deposit/Withdraw Buttons */}
-        <div className="flex space-x-2">
-          <button className="bg-green-600 hover:bg-green-700 p-3 rounded-lg transition-colors" data-testid="button-deposit">
-            <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-green-500 rounded flex items-center justify-center mb-1">
-                <Plus className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-white text-xs">Deposit</span>
-            </div>
+        <div className="flex space-x-2 flex-shrink-0">
+          <button className="w-12 h-12 bg-green-600 hover:bg-green-700 rounded-xl transition-colors flex items-center justify-center" data-testid="button-deposit">
+            <Plus className="w-6 h-6 text-white" />
           </button>
           
-          <button className="bg-red-600 hover:bg-red-700 p-3 rounded-lg transition-colors" data-testid="button-withdraw">
-            <div className="flex flex-col items-center">
-              <div className="w-8 h-8 bg-red-500 rounded flex items-center justify-center mb-1">
-                <Minus className="w-4 h-4 text-white" />
-              </div>
-              <span className="text-white text-xs">Withdraw</span>
-            </div>
+          <button className="w-12 h-12 bg-red-600 hover:bg-red-700 rounded-xl transition-colors flex items-center justify-center" data-testid="button-withdraw">
+            <Minus className="w-6 h-6 text-white" />
           </button>
         </div>
       </div>
